@@ -1,5 +1,10 @@
 import type { Metadata } from "next";
-import { communityProjects, initiativeCategories } from "@/config/content";
+import {
+  communityProjects,
+  initiativeCategories,
+  outreachPhotos,
+  outreachVideos,
+} from "@/config/content";
 import { PageHeader } from "@/components/ui/PageHeader";
 import { WorkDirectory } from "@/components/work/WorkDirectory";
 import { DonationSection } from "@/components/sections/DonationSection";
@@ -7,7 +12,7 @@ import { DonationSection } from "@/components/sections/DonationSection";
 export const metadata: Metadata = {
   title: "Our Work",
   description:
-    "Explore Notun Sokal's community initiative categories across Community Development, Education Initiatives, Health Awareness, Social Welfare, and Environmental Responsibility.",
+    "Explore Notun Sokal's documented community initiatives, outreach photographs, field videos, and thematic initiative categories.",
   alternates: {
     canonical: "/our-work",
   },
@@ -24,8 +29,8 @@ export default async function OurWorkPage({
     <>
       <PageHeader
         eyebrow="Community Initiatives"
-        title="Our Work & Initiative Areas"
-        description="A transparent space structured to share verified community activities, field photography, and initiative categories as Notun Sokal grows."
+        title="Our Work & Field Outreach"
+        description="Explore Notun Sokal's community initiatives, genuine field photography, and conversations with families and volunteers across our outreach drives."
         breadcrumbs={[{ label: "Our Work" }]}
       />
 
@@ -34,6 +39,8 @@ export default async function OurWorkPage({
           <WorkDirectory
             categories={initiativeCategories}
             projects={communityProjects}
+            photos={outreachPhotos}
+            videos={outreachVideos}
             initialCategory={resolvedParams.category}
           />
         </div>

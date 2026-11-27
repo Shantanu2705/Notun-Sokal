@@ -13,6 +13,7 @@ export interface FocusArea {
   aspirationalGoals: string[];
   image: string;
   imageAlt: string;
+  isRealOutreachImage?: boolean;
   iconName: "users" | "book-open" | "heart-pulse" | "sprout";
   accentTone: "forest" | "orange" | "natural" | "saffron";
 }
@@ -29,6 +30,27 @@ export interface InitiativeCategory {
   description: string;
 }
 
+export interface OutreachPhoto {
+  id: string;
+  src: string;
+  width: number;
+  height: number;
+  orientation: "landscape" | "portrait";
+  alt: string;
+  caption: string;
+  category: "education-initiatives" | "community-development";
+}
+
+export interface OutreachVideo {
+  id: string;
+  src: string;
+  poster: string;
+  title: string;
+  description: string;
+  summaryNote: string;
+  orientation: "landscape" | "portrait";
+}
+
 export interface CommunityProject {
   id: string;
   slug: string;
@@ -36,9 +58,12 @@ export interface CommunityProject {
   category: string;
   location: string;
   summary: string;
+  details: string[];
   image: string;
   imageAlt: string;
   status: string;
+  galleryPhotoIds: string[];
+  videoIds?: string[];
 }
 
 export interface InvolvementOption {

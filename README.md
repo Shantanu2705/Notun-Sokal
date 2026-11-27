@@ -17,9 +17,12 @@ Production-ready Next.js (App Router, TypeScript, Tailwind CSS) website for **No
 - `src/components/` — Reusable UI primitives, sticky responsive navigation, multi-column footer, donation QR panel, collaboration CTA, and validated contact form.
 - `src/lib/` — Zod input validation and sanitization (`validation.ts`), sliding-window rate limiter (`rate-limit.ts`), and server-only email/webhook delivery (`contact-delivery.ts`).
 
-## Donation QR Verification
+## Donation Channels & Verification
 
-The supplied UPI QR image (`public/images/donation-qr.jpg`) is rendered uncropped and unaltered with generous surrounding white space to preserve scannability. Because the supplied QR currently encodes payee name **Tenu Roy**, the interface displays an explicit verification notice advising contributors to confirm the payee name and contact Notun Sokal directly if verification is needed. To replace the QR asset once an institutional account QR is issued, update `public/images/donation-qr.jpg` and `siteConfig.assets.donationQr` in `src/config/site.ts`.
+The Donation section supports both:
+
+1. **Direct Bank Transfer (NEFT / IMPS / RTGS):** Displays Account Number `35740110008171` and NEFT IFSC Code `UCBA0003574` (configurable via `siteConfig.assets.bankTransfer` in `src/config/site.ts`) with copy-to-clipboard actions.
+2. **UPI QR Code:** The supplied UPI QR image (`public/images/donation-qr.jpg`) is rendered uncropped and unaltered with generous surrounding white space to preserve scannability. Because the supplied QR currently encodes payee name **Tenu Roy**, the interface displays an explicit verification notice advising contributors to confirm the payee name and contact Notun Sokal directly if verification is needed. To replace the QR asset once an institutional account QR is issued, update `public/images/donation-qr.jpg` and `siteConfig.assets.donationQr` in `src/config/site.ts`.
 
 ## Contact Form Configuration
 

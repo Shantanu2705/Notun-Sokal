@@ -54,7 +54,9 @@ export default function FocusAreasPage() {
                       />
                     </div>
                     <figcaption className="mt-2.5 text-xs text-muted">
-                      Illustrative photograph representing {area.title}.
+                      {area.isRealOutreachImage
+                        ? `Notun Sokal field outreach photograph — ${area.title}.`
+                        : `Illustrative photograph representing ${area.title}.`}
                     </figcaption>
                   </figure>
                 </div>

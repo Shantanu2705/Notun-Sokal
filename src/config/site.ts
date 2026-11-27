@@ -40,7 +40,13 @@ export const siteConfig = {
       listedPayeeName: "Tenu Roy",
       isVerifiedOfficialAccount: false,
       verificationNotice:
-        "Before confirming any payment, verify the recipient name shown in your UPI app (currently listed as Tenu Roy). Please contact us directly at +91 80014 11222 or tenuramroy788@gmail.com if you would like to confirm payment routing prior to donating.",
+        "Before confirming any UPI payment, verify the recipient name shown in your UPI app (currently listed as Tenu Roy). Please contact us directly at +91 80014 11222 or tenuramroy788@gmail.com if you would like to confirm payment routing prior to donating.",
+    },
+    bankTransfer: {
+      accountNumber: "35740110008171",
+      ifscCode: "UCBA0003574",
+      supportedModes: "NEFT / IMPS / RTGS",
+      note: "Please verify the Account Number and NEFT IFSC Code carefully before initiating a bank transfer, and reach out to us at +91 80014 11222 or tenuramroy788@gmail.com if you need receipt confirmation.",
     },
   },
   navigation: [

@@ -74,10 +74,10 @@ export default function AboutPage() {
             <div className="lg:col-span-5">
               <div className="overflow-hidden rounded-lg border border-border-soft bg-cream">
                 <Image
-                  src="/images/hero-community.jpg"
-                  alt="Illustrative photograph depicting neighbours and volunteers engaged in community conversation"
-                  width={960}
-                  height={600}
+                  src="/media/outreach/outreach-09.jpg"
+                  alt="Notun Sokal volunteers distributing notebooks and pens directly to local children"
+                  width={1280}
+                  height={960}
                   sizes="(max-width: 1024px) 100vw, 40vw"
                   className="aspect-[4/3] w-full object-cover"
                 />

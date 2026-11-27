@@ -1,13 +1,14 @@
 import Image from "next/image";
 import Link from "next/link";
-import { ArrowRight, Compass, FileText, MapPin } from "lucide-react";
+import { ArrowRight, Compass, Film, Images, MapPin } from "lucide-react";
 import {
   approachStages,
-  communityProjects,
   focusAreas,
   homeInvolvementOptions,
   initiativeCategories,
   missionVisionContent,
+  outreachPhotos,
+  outreachVideos,
 } from "@/config/content";
 import { ButtonLink } from "@/components/ui/ButtonLink";
 import { FocusIcon } from "@/components/ui/FocusIcon";
@@ -17,6 +18,11 @@ import { CollaborationBanner } from "@/components/sections/CollaborationBanner";
 import { FinalCtaSection } from "@/components/sections/FinalCtaSection";
 
 export default function HomePage() {
+  const featuredFieldPhotos = outreachPhotos.filter((photo) =>
+    ["photo-05", "photo-09", "photo-12", "photo-15"].includes(photo.id)
+  );
+  const featuredVideo = outreachVideos[1] ?? outreachVideos[0];
+
   return (
     <>
       {/* Section 2: Hero Section */}
@@ -311,79 +317,106 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* Section 7: Our Work / Community Initiatives */}
+      {/* Section 7: Our Work / Community Initiatives (Real Field Gallery & Video Highlight) */}
       <section className="border-b border-border-soft bg-white py-20 lg:py-28">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <div className="grid items-start gap-12 lg:grid-cols-12">
-            <div className="lg:col-span-5">
-              <SectionHeading
-                eyebrow="Our Work"
-                title="Community Initiatives Built on Transparency."
-                description="We publish verified project records only when genuine field details and documentation are ready—never fabricated figures or unverified claims."
-              />
+          <div className="flex flex-col justify-between gap-6 md:flex-row md:items-end">
+            <SectionHeading
+              eyebrow="Our Work in Action"
+              title="Community Outreach & Field Moments."
+              description="Moments from Notun Sokal's notebook and stationery distribution drives, bringing study essentials and encouragement directly to children and families."
+            />
+            <ButtonLink href="/our-work" variant="primary">
+              <span>View All 16 Photos &amp; 2 Videos</span>
+              <ArrowRight className="h-4 w-4" aria-hidden="true" />
+            </ButtonLink>
+          </div>
 
-              <div className="mt-8 rounded-lg border border-border-soft bg-ivory p-6">
-                <div className="flex items-start gap-3">
-                  <FileText
-                    className="mt-0.5 h-5 w-5 shrink-0 text-forest"
-                    aria-hidden="true"
+          {/* Editorial Photo Collage + Featured Video */}
+          <div className="mt-12 grid gap-8 lg:grid-cols-12">
+            {/* 4 Highlight Field Photos */}
+            <div className="grid gap-4 sm:grid-cols-2 lg:col-span-7">
+              {featuredFieldPhotos.map((photo) => (
+                <figure
+                  key={photo.id}
+                  className="overflow-hidden rounded-lg border border-border-soft bg-ivory"
+                >
+                  <Image
+                    src={photo.src}
+                    alt={photo.alt}
+                    width={photo.width}
+                    height={photo.height}
+                    sizes="(max-width: 768px) 100vw, 28vw"
+                    className={`aspect-[4/3] w-full object-cover ${
+                      photo.orientation === "portrait"
+                        ? "object-top"
+                        : "object-center"
+                    }`}
                   />
-                  <div>
-                    <h3 className="font-display text-lg font-semibold text-dark-green">
-                      {communityProjects.length === 0
-                        ? "Field Records & Updates Coming Soon"
-                        : "Documented Field Initiatives"}
-                    </h3>
-                    <p className="mt-2 text-sm leading-relaxed text-muted">
-                      As Notun Sokal documents community initiatives, events,
-                      and photographs, each verified activity will be archived in
-                      our project directory across these five categories.
-                    </p>
-                    <div className="mt-5 flex flex-wrap gap-3">
-                      <ButtonLink href="/our-work" variant="primary">
-                        <span>Visit Our Work Page</span>
-                        <ArrowRight className="h-4 w-4" aria-hidden="true" />
-                      </ButtonLink>
-                      <ButtonLink
-                        href="/contact?subject=Community+Initiative+Enquiry"
-                        variant="secondary"
-                      >
-                        <span>Share or Participate</span>
-                      </ButtonLink>
-                    </div>
-                  </div>
-                </div>
-              </div>
+                  <figcaption className="p-3 text-xs leading-relaxed text-muted">
+                    {photo.caption}
+                  </figcaption>
+                </figure>
+              ))}
             </div>
 
-            <div className="lg:col-span-7">
-              <div className="divide-y divide-border-soft rounded-lg border border-border-soft bg-ivory">
-                {initiativeCategories.map((category, idx) => (
-                  <div
-                    key={category.id}
-                    className="flex flex-col gap-2 p-5 sm:flex-row sm:items-center sm:justify-between sm:gap-6 sm:p-6"
-                  >
-                    <div>
-                      <div className="flex items-center gap-3">
-                        <span className="text-xs font-bold tracking-wider text-orange">
-                          0{idx + 1}
-                        </span>
-                        <h3 className="font-display text-lg font-semibold text-dark-green">
-                          {category.label}
-                        </h3>
-                      </div>
-                      <p className="mt-1.5 text-sm leading-relaxed text-muted">
-                        {category.description}
-                      </p>
-                    </div>
-                    <Link
-                      href={`/our-work?category=${category.id}`}
-                      className="shrink-0 text-xs font-semibold tracking-wide text-forest uppercase hover:underline"
+            {/* Featured Video + Initiative Categories */}
+            <div className="flex flex-col justify-between gap-6 lg:col-span-5">
+              {featuredVideo ? (
+                <article className="overflow-hidden rounded-lg border border-border-soft bg-ivory">
+                  <div className="bg-black">
+                    <video
+                      controls
+                      preload="metadata"
+                      playsInline
+                      poster={featuredVideo.poster}
+                      aria-label={featuredVideo.title}
+                      className="aspect-video w-full object-contain"
                     >
-                      View Category &rarr;
-                    </Link>
+                      <source src={featuredVideo.src} type="video/mp4" />
+                      Your browser does not support embedded video playback.
+                    </video>
                   </div>
-                ))}
+                  <div className="p-5">
+                    <p className="inline-flex items-center gap-1.5 text-[11px] font-semibold tracking-wider text-forest uppercase">
+                      <Film className="h-3.5 w-3.5 text-orange" aria-hidden="true" />
+                      <span>Field Video Highlight</span>
+                    </p>
+                    <h3 className="font-display mt-1.5 text-lg font-semibold text-dark-green">
+                      {featuredVideo.title}
+                    </h3>
+                    <p className="mt-1.5 text-xs leading-relaxed text-muted">
+                      {featuredVideo.description}
+                    </p>
+                  </div>
+                </article>
+              ) : null}
+
+              <div className="rounded-lg border border-border-soft bg-mint-bg/60 p-5">
+                <div className="flex items-center justify-between gap-2">
+                  <p className="inline-flex items-center gap-1.5 text-xs font-semibold tracking-wider text-forest uppercase">
+                    <Images className="h-4 w-4" aria-hidden="true" />
+                    <span>Initiative Categories</span>
+                  </p>
+                  <Link
+                    href="/our-work"
+                    className="text-xs font-semibold text-forest hover:underline"
+                  >
+                    Open Full Archive &rarr;
+                  </Link>
+                </div>
+                <ul className="mt-3 flex flex-wrap gap-2">
+                  {initiativeCategories.map((category) => (
+                    <li key={category.id}>
+                      <Link
+                        href={`/our-work?category=${category.id}`}
+                        className="inline-block rounded-md border border-border-soft bg-white px-3 py-1.5 text-xs font-medium text-dark-green transition-colors hover:border-forest hover:text-forest"
+                      >
+                        {category.label}
+                      </Link>
+                    </li>
+                  ))}
+                </ul>
               </div>
             </div>
           </div>

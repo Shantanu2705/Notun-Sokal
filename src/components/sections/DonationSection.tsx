@@ -3,6 +3,7 @@ import { Mail, Phone, QrCode, ShieldAlert, ArrowRight } from "lucide-react";
 import { siteConfig } from "@/config/site";
 import { ButtonLink } from "@/components/ui/ButtonLink";
 import { SectionHeading } from "@/components/ui/SectionHeading";
+import { DonationBankDetails } from "@/components/sections/DonationBankDetails";
 
 export function DonationSection() {
   return (
@@ -13,16 +14,13 @@ export function DonationSection() {
     >
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="grid items-start gap-12 lg:grid-cols-12 lg:gap-14">
-          {/* Editorial Copy & Verification Details */}
+          {/* Editorial Copy, Bank Transfer & Verification Details */}
           <div className="lg:col-span-7">
             <SectionHeading
               eyebrow="Support Our Mission"
               title="Your Kindness Can Help Build Someone's Tomorrow."
             />
-            <p
-              id="donation-heading"
-              className="sr-only"
-            >
+            <p id="donation-heading" className="sr-only">
               Donate to support Notun Sokal
             </p>
             <p className="mt-6 text-base leading-relaxed text-ink sm:text-lg">
@@ -34,10 +32,13 @@ export function DonationSection() {
               progress.
             </p>
 
+            {/* Direct Bank Transfer Card (NEFT / IMPS / RTGS) */}
+            <DonationBankDetails />
+
             {/* Step-by-step UPI Instructions */}
-            <div className="mt-8 rounded-lg border border-border-soft bg-white p-6 sm:p-7">
+            <div className="mt-6 rounded-lg border border-border-soft bg-white p-6 sm:p-7">
               <h3 className="font-display text-lg font-semibold text-dark-green">
-                How to Contribute via UPI
+                How to Contribute via UPI QR Code
               </h3>
               <ol className="mt-4 space-y-3 text-sm leading-relaxed text-ink sm:text-base">
                 <li className="flex gap-3">
