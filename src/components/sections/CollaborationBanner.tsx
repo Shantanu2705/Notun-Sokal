@@ -3,9 +3,9 @@ import { ButtonLink } from "@/components/ui/ButtonLink";
 
 export function CollaborationBanner() {
   return (
-    <section className="border-b border-border-soft bg-white py-20 lg:py-24">
+    <section className="border-b border-border-soft bg-white py-14 sm:py-20 lg:py-24">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <div className="grid items-center gap-8 rounded-lg border border-border-soft bg-mint-bg p-8 sm:p-12 lg:grid-cols-12 lg:p-14">
+        <div className="grid items-center gap-7 rounded-lg border border-border-soft bg-mint-bg p-6 sm:gap-8 sm:p-12 lg:grid-cols-12 lg:p-14">
           <div className="lg:col-span-8">
             <p className="mb-3 inline-flex items-center gap-2 text-xs font-semibold tracking-[0.18em] text-forest uppercase">
               <Handshake className="h-4 w-4 text-orange" aria-hidden="true" />

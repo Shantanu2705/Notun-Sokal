@@ -25,7 +25,7 @@ export function PageHeader({
 
   return (
     <section
-      className={`border-b border-border-soft ${bgClass} py-14 sm:py-18 lg:py-20`}
+      className={`border-b border-border-soft ${bgClass} py-10 sm:py-16 lg:py-20`}
     >
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <nav aria-label="Breadcrumb" className="mb-5">

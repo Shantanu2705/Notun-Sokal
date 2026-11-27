@@ -257,7 +257,7 @@ export function ContactForm({
               aria-describedby={
                 fieldErrors.fullName ? "error-fullName" : undefined
               }
-              className="mt-1.5 block w-full rounded-md border border-border-soft bg-ivory/40 px-3.5 py-2.5 text-sm text-ink placeholder:text-muted/70 focus:border-forest focus:bg-white focus:outline-none"
+              className="mt-1.5 block min-h-[44px] w-full rounded-md border border-border-soft bg-ivory/40 px-3.5 py-2.5 text-base text-ink placeholder:text-muted/70 focus:border-forest focus:bg-white focus:outline-none sm:text-sm"
               placeholder="Your full name"
             />
             {fieldErrors.fullName ? (
@@ -285,7 +285,7 @@ export function ContactForm({
               onChange={(e) => setEmail(e.target.value)}
               aria-invalid={Boolean(fieldErrors.email)}
               aria-describedby={fieldErrors.email ? "error-email" : undefined}
-              className="mt-1.5 block w-full rounded-md border border-border-soft bg-ivory/40 px-3.5 py-2.5 text-sm text-ink placeholder:text-muted/70 focus:border-forest focus:bg-white focus:outline-none"
+              className="mt-1.5 block min-h-[44px] w-full rounded-md border border-border-soft bg-ivory/40 px-3.5 py-2.5 text-base text-ink placeholder:text-muted/70 focus:border-forest focus:bg-white focus:outline-none sm:text-sm"
               placeholder="you@example.com"
             />
             {fieldErrors.email ? (
@@ -315,7 +315,7 @@ export function ContactForm({
               onChange={(e) => setPhone(e.target.value)}
               aria-invalid={Boolean(fieldErrors.phone)}
               aria-describedby={fieldErrors.phone ? "error-phone" : undefined}
-              className="mt-1.5 block w-full rounded-md border border-border-soft bg-ivory/40 px-3.5 py-2.5 text-sm text-ink placeholder:text-muted/70 focus:border-forest focus:bg-white focus:outline-none"
+              className="mt-1.5 block min-h-[44px] w-full rounded-md border border-border-soft bg-ivory/40 px-3.5 py-2.5 text-base text-ink placeholder:text-muted/70 focus:border-forest focus:bg-white focus:outline-none sm:text-sm"
               placeholder="+91 98XXX XXXXX"
             />
             {fieldErrors.phone ? (
@@ -339,7 +339,7 @@ export function ContactForm({
               onChange={(e) =>
                 setInquiryType(e.target.value as (typeof INQUIRY_TYPES)[number])
               }
-              className="mt-1.5 block w-full rounded-md border border-border-soft bg-ivory/40 px-3.5 py-2.5 text-sm text-ink focus:border-forest focus:bg-white focus:outline-none"
+              className="mt-1.5 block min-h-[44px] w-full rounded-md border border-border-soft bg-ivory/40 px-3.5 py-2.5 text-base text-ink focus:border-forest focus:bg-white focus:outline-none sm:text-sm"
             >
               {INQUIRY_TYPES.map((typeKey) => (
                 <option key={typeKey} value={typeKey}>
@@ -367,7 +367,7 @@ export function ContactForm({
             onChange={(e) => setSubject(e.target.value)}
             aria-invalid={Boolean(fieldErrors.subject)}
             aria-describedby={fieldErrors.subject ? "error-subject" : undefined}
-            className="mt-1.5 block w-full rounded-md border border-border-soft bg-ivory/40 px-3.5 py-2.5 text-sm text-ink placeholder:text-muted/70 focus:border-forest focus:bg-white focus:outline-none"
+            className="mt-1.5 block min-h-[44px] w-full rounded-md border border-border-soft bg-ivory/40 px-3.5 py-2.5 text-base text-ink placeholder:text-muted/70 focus:border-forest focus:bg-white focus:outline-none sm:text-sm"
             placeholder="How would you like to connect?"
           />
           {fieldErrors.subject ? (
@@ -394,7 +394,7 @@ export function ContactForm({
             onChange={(e) => setMessage(e.target.value)}
             aria-invalid={Boolean(fieldErrors.message)}
             aria-describedby={fieldErrors.message ? "error-message" : undefined}
-            className="mt-1.5 block w-full rounded-md border border-border-soft bg-ivory/40 px-3.5 py-2.5 text-sm text-ink placeholder:text-muted/70 focus:border-forest focus:bg-white focus:outline-none"
+            className="mt-1.5 block w-full rounded-md border border-border-soft bg-ivory/40 px-3.5 py-2.5 text-base text-ink placeholder:text-muted/70 focus:border-forest focus:bg-white focus:outline-none sm:text-sm"
             placeholder="Share your message, volunteering interest, or partnership idea..."
           />
           {fieldErrors.message ? (

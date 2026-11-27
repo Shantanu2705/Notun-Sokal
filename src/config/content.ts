@@ -39,7 +39,6 @@ export const focusAreas: FocusArea[] = [
     image: "/media/outreach/outreach-12.jpg",
     imageAlt:
       "Notun Sokal community outreach gathering with local children and families in North Bengal",
-    isRealOutreachImage: true,
     iconName: "users",
     accentTone: "forest",
   },
@@ -60,7 +59,6 @@ export const focusAreas: FocusArea[] = [
     image: "/media/outreach/outreach-05.jpg",
     imageAlt:
       "Notun Sokal volunteer handing notebooks and stationery supplies to young students during a field outreach drive",
-    isRealOutreachImage: true,
     iconName: "book-open",
     accentTone: "orange",
   },
@@ -78,10 +76,6 @@ export const focusAreas: FocusArea[] = [
       "Encourage supportive community conversations around family and elder wellbeing",
       "Connect local awareness efforts with trusted public health guidance",
     ],
-    image: "/images/focus-health.jpg",
-    imageAlt:
-      "Illustrative photograph of an outdoor community health and hygiene awareness conversation in morning light",
-    isRealOutreachImage: false,
     iconName: "heart-pulse",
     accentTone: "natural",
   },
@@ -99,10 +93,6 @@ export const focusAreas: FocusArea[] = [
       "Promote responsible, community-led stewardship of shared local spaces",
       "Support long-term thinking that balances social upliftment with ecological care",
     ],
-    image: "/images/focus-sustainability.jpg",
-    imageAlt:
-      "Illustrative photograph of community volunteers planting young green saplings together in morning sunlight",
-    isRealOutreachImage: false,
     iconName: "sprout",
     accentTone: "saffron",
   },

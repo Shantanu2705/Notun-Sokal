@@ -116,7 +116,7 @@ export default async function ProjectDetailPage({
                     <div className="flex justify-center bg-black">
                       <video
                         controls
-                        preload="metadata"
+                        preload="none"
                         playsInline
                         poster={video.poster}
                         aria-label={video.title}

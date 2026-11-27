@@ -11,9 +11,8 @@ export interface FocusArea {
   summary: string;
   detailedDescription: string;
   aspirationalGoals: string[];
-  image: string;
-  imageAlt: string;
-  isRealOutreachImage?: boolean;
+  image?: string;
+  imageAlt?: string;
   iconName: "users" | "book-open" | "heart-pulse" | "sprout";
   accentTone: "forest" | "orange" | "natural" | "saffron";
 }

@@ -10,7 +10,7 @@ export function DonationSection() {
     <section
       id="donate"
       aria-labelledby="donation-heading"
-      className="scroll-mt-24 border-y border-border-soft bg-cream py-20 lg:py-28"
+      className="scroll-mt-24 border-y border-border-soft bg-cream py-14 sm:py-20 lg:py-28"
     >
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="grid items-start gap-12 lg:grid-cols-12 lg:gap-14">

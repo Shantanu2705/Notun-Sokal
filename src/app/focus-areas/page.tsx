@@ -26,8 +26,8 @@ export default function FocusAreasPage() {
         breadcrumbs={[{ label: "Our Focus Areas" }]}
       />
 
-      <section className="border-b border-border-soft bg-white py-16 lg:py-24">
-        <div className="mx-auto max-w-7xl space-y-20 px-4 sm:px-6 lg:space-y-28 lg:px-8">
+      <section className="border-b border-border-soft bg-white py-12 sm:py-16 lg:py-24">
+        <div className="mx-auto max-w-7xl space-y-16 px-4 sm:space-y-20 sm:px-6 lg:space-y-28 lg:px-8">
           {focusAreas.map((area, index) => {
             const isReversed = index % 2 === 1;
 
@@ -35,30 +35,63 @@ export default function FocusAreasPage() {
               <article
                 key={area.id}
                 id={area.slug}
-                className="scroll-mt-28 grid items-center gap-10 lg:grid-cols-12 lg:gap-14"
+                className="scroll-mt-28 grid items-center gap-8 sm:gap-10 lg:grid-cols-12 lg:gap-14"
               >
                 <div
                   className={`lg:col-span-6 ${
                     isReversed ? "lg:order-2" : "lg:order-1"
                   }`}
                 >
-                  <figure>
-                    <div className="overflow-hidden rounded-lg border border-border-soft bg-mint-bg shadow-sm">
-                      <Image
-                        src={area.image}
-                        alt={area.imageAlt}
-                        width={960}
-                        height={720}
-                        sizes="(max-width: 1024px) 100vw, 50vw"
-                        className="aspect-[4/3] w-full object-cover"
-                      />
+                  {area.image ? (
+                    <figure>
+                      <div className="overflow-hidden rounded-lg border border-border-soft bg-mint-bg shadow-sm">
+                        <Image
+                          src={area.image}
+                          alt={area.imageAlt || area.title}
+                          width={1280}
+                          height={960}
+                          sizes="(max-width: 1024px) 100vw, 50vw"
+                          className="aspect-[4/3] w-full object-cover"
+                        />
+                      </div>
+                      <figcaption className="mt-2.5 text-xs text-muted">
+                        Notun Sokal field outreach photograph — {area.title}.
+                      </figcaption>
+                    </figure>
+                  ) : (
+                    <div
+                      className={`flex aspect-[4/3] flex-col justify-between rounded-lg border border-border-soft p-7 sm:p-10 ${
+                        area.accentTone === "natural"
+                          ? "bg-mint-bg"
+                          : "bg-cream"
+                      }`}
+                    >
+                      <div className="flex items-center justify-between">
+                        <span className="inline-flex h-14 w-14 items-center justify-center rounded-lg bg-white text-forest shadow-sm ring-1 ring-border-soft">
+                          <FocusIcon
+                            name={area.iconName}
+                            className="h-7 w-7"
+                          />
+                        </span>
+                        <span className="rounded-full bg-white px-3 py-1 text-xs font-semibold tracking-wider text-forest uppercase ring-1 ring-border-soft">
+                          Focus Pillar 0{index + 1}
+                        </span>
+                      </div>
+
+                      <div>
+                        <p className="text-xs font-semibold tracking-[0.16em] text-orange uppercase">
+                          Thematic Commitment
+                        </p>
+                        <p className="font-display mt-2 text-2xl leading-snug font-semibold text-dark-green sm:text-3xl">
+                          {area.title}
+                        </p>
+                        <p className="mt-2 text-sm text-muted">
+                          Field documentation and photographs will be added as
+                          dedicated initiatives in this pillar take shape.
+                        </p>
+                      </div>
                     </div>
-                    <figcaption className="mt-2.5 text-xs text-muted">
-                      {area.isRealOutreachImage
-                        ? `Notun Sokal field outreach photograph — ${area.title}.`
-                        : `Illustrative photograph representing ${area.title}.`}
-                    </figcaption>
-                  </figure>
+                  )}
                 </div>
 
                 <div
@@ -71,7 +104,7 @@ export default function FocusAreasPage() {
                     <span>Focus Area 0{index + 1}</span>
                   </div>
 
-                  <h2 className="font-display mt-4 text-3xl font-semibold text-dark-green sm:text-4xl">
+                  <h2 className="font-display mt-4 text-2xl font-semibold text-dark-green sm:text-4xl">
                     {area.title}
                   </h2>
 
@@ -96,17 +129,22 @@ export default function FocusAreasPage() {
                     </ul>
                   </div>
 
-                  <div className="mt-7 flex flex-wrap gap-3">
+                  <div className="mt-7 flex flex-col gap-3 sm:flex-row sm:flex-wrap">
                     <ButtonLink
                       href={`/contact?subject=${encodeURIComponent(
                         `Supporting ${area.title}`
                       )}`}
                       variant="primary"
+                      className="w-full sm:w-auto"
                     >
                       <span>Participate in {area.shortTitle}</span>
                       <ArrowRight className="h-4 w-4" aria-hidden="true" />
                     </ButtonLink>
-                    <ButtonLink href="/get-involved" variant="secondary">
+                    <ButtonLink
+                      href="/get-involved"
+                      variant="secondary"
+                      className="w-full sm:w-auto"
+                    >
                       <span>Ways to Get Involved</span>
                     </ButtonLink>
                   </div>

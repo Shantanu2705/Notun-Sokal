@@ -48,28 +48,30 @@ export function Navbar() {
         Skip to main content
       </a>
 
-      <div className="mx-auto flex h-20 max-w-7xl items-center justify-between gap-4 px-4 sm:px-6 lg:px-8">
+      <div className="mx-auto flex h-20 max-w-7xl items-center justify-between gap-3 px-4 sm:h-24 sm:px-6 lg:px-8">
         <Link
           href="/"
           onClick={() => setMobileOpen(false)}
-          className="flex shrink-0 items-center gap-3 rounded-md py-1 focus-visible:outline-2 focus-visible:outline-orange"
+          className="flex min-w-0 shrink-0 items-center gap-3 rounded-md py-1 focus-visible:outline-2 focus-visible:outline-orange sm:gap-3.5"
           aria-label="Notun Sokal — Return to homepage"
         >
-          <span className="flex h-12 w-12 shrink-0 items-center justify-center overflow-hidden rounded-md bg-white p-0.5 ring-1 ring-border-soft">
+          <span className="flex h-14 w-14 shrink-0 items-center justify-center overflow-hidden rounded-lg bg-white p-1 shadow-xs ring-1 ring-border-soft sm:h-[72px] sm:w-[72px]">
             <Image
               src={siteConfig.assets.logo.src}
               alt={siteConfig.assets.logo.alt}
-              width={48}
-              height={48}
+              width={72}
+              height={72}
+              quality={95}
               priority
+              sizes="(max-width: 640px) 56px, 72px"
               className="h-full w-full object-contain"
             />
           </span>
-          <span className="flex flex-col leading-tight">
-            <span className="font-display text-lg font-semibold tracking-tight text-dark-green sm:text-xl">
+          <span className="flex min-w-0 flex-col leading-tight">
+            <span className="font-display truncate text-lg font-semibold tracking-tight text-dark-green sm:text-2xl">
               {siteConfig.name}
             </span>
-            <span className="hidden text-[11px] font-medium tracking-wider text-muted uppercase sm:block">
+            <span className="truncate text-[10px] font-medium tracking-wider text-muted uppercase sm:text-[11px]">
               Siliguri • Social Welfare
             </span>
           </span>
@@ -110,13 +112,13 @@ export function Navbar() {
           </Link>
         </nav>
 
-        <div className="flex items-center gap-2 lg:hidden">
+        <div className="flex shrink-0 items-center gap-2 lg:hidden">
           <Link
             href="/#donate"
             onClick={() => setMobileOpen(false)}
-            className="hidden rounded-md bg-forest px-3.5 py-2 text-xs font-semibold text-white transition-colors hover:bg-dark-green sm:inline-flex"
+            className="inline-flex min-h-[40px] items-center rounded-md bg-forest px-3 py-2 text-xs font-semibold text-white transition-colors hover:bg-dark-green sm:px-3.5"
           >
-            Support Our Mission
+            Donate
           </Link>
           <button
             type="button"
@@ -139,7 +141,7 @@ export function Navbar() {
         <nav
           id="mobile-navigation-drawer"
           aria-label="Mobile navigation"
-          className="border-t border-border-soft bg-white px-4 pt-3 pb-6 shadow-md lg:hidden"
+          className="max-h-[calc(100vh-5rem)] overflow-y-auto border-t border-border-soft bg-white px-4 pt-3 pb-6 shadow-md lg:hidden"
         >
           <ul className="space-y-1">
             {siteConfig.navigation.map((item) => {
@@ -155,7 +157,7 @@ export function Navbar() {
                     href={item.href}
                     onClick={() => setMobileOpen(false)}
                     aria-current={isActive ? "page" : undefined}
-                    className={`block rounded-md px-3.5 py-3 text-base font-medium transition-colors ${
+                    className={`flex min-h-[48px] items-center rounded-md px-3.5 py-3 text-base font-medium transition-colors ${
                       isActive
                         ? "bg-mint-bg font-semibold text-forest"
                         : "text-ink hover:bg-mint-bg/60 hover:text-forest"
@@ -171,7 +173,7 @@ export function Navbar() {
             <Link
               href="/#donate"
               onClick={() => setMobileOpen(false)}
-              className="flex w-full items-center justify-center gap-2 rounded-md bg-forest px-4 py-3 text-sm font-semibold text-white transition-colors hover:bg-dark-green"
+              className="flex min-h-[48px] w-full items-center justify-center gap-2 rounded-md bg-forest px-4 py-3 text-sm font-semibold text-white transition-colors hover:bg-dark-green"
             >
               <HeartHandshake className="h-4 w-4 text-saffron" aria-hidden="true" />
               <span>Support Our Mission</span>

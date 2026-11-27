@@ -91,13 +91,13 @@ export function MediaGallerySection({
                 <div className="flex items-center justify-center bg-deep-pine">
                   <video
                     controls
-                    preload="metadata"
+                    preload="none"
                     playsInline
                     poster={video.poster}
                     aria-label={video.title}
                     className={`w-full bg-black object-contain ${
                       video.orientation === "portrait"
-                        ? "max-h-[460px]"
+                        ? "max-h-[420px] sm:max-h-[460px]"
                         : "aspect-video"
                     }`}
                   >

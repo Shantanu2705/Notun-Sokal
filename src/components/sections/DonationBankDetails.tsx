@@ -50,15 +50,15 @@ export function DonationBankDetails() {
           <dt className="text-xs font-semibold tracking-wider text-muted uppercase">
             Account Number
           </dt>
-          <dd className="mt-1.5 flex items-center justify-between gap-2">
-            <span className="font-mono text-base font-bold tracking-wide text-dark-green sm:text-lg">
+          <dd className="mt-1.5 flex flex-wrap items-center justify-between gap-2">
+            <span className="font-mono text-base font-bold tracking-wide break-all text-dark-green sm:text-lg">
               {accountNumber}
             </span>
             <button
               type="button"
               onClick={() => handleCopy(accountNumber, "account")}
               aria-label="Copy bank account number"
-              className="inline-flex shrink-0 items-center gap-1 rounded border border-border-soft bg-white px-2.5 py-1 text-xs font-semibold text-forest transition-colors hover:border-forest hover:bg-mint-bg"
+              className="inline-flex min-h-[36px] shrink-0 items-center gap-1 rounded border border-border-soft bg-white px-3 py-1.5 text-xs font-semibold text-forest transition-colors hover:border-forest hover:bg-mint-bg"
             >
               {copiedField === "account" ? (
                 <>
@@ -79,15 +79,15 @@ export function DonationBankDetails() {
           <dt className="text-xs font-semibold tracking-wider text-muted uppercase">
             NEFT IFS Code
           </dt>
-          <dd className="mt-1.5 flex items-center justify-between gap-2">
-            <span className="font-mono text-base font-bold tracking-wide text-dark-green sm:text-lg">
+          <dd className="mt-1.5 flex flex-wrap items-center justify-between gap-2">
+            <span className="font-mono text-base font-bold tracking-wide break-all text-dark-green sm:text-lg">
               {ifscCode}
             </span>
             <button
               type="button"
               onClick={() => handleCopy(ifscCode, "ifsc")}
               aria-label="Copy NEFT IFSC code"
-              className="inline-flex shrink-0 items-center gap-1 rounded border border-border-soft bg-white px-2.5 py-1 text-xs font-semibold text-forest transition-colors hover:border-forest hover:bg-mint-bg"
+              className="inline-flex min-h-[36px] shrink-0 items-center gap-1 rounded border border-border-soft bg-white px-3 py-1.5 text-xs font-semibold text-forest transition-colors hover:border-forest hover:bg-mint-bg"
             >
               {copiedField === "ifsc" ? (
                 <>

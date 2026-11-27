@@ -8,28 +8,30 @@ export function Footer() {
 
   return (
     <footer className="border-t border-dark-green bg-deep-pine text-ivory">
-      <div className="mx-auto max-w-7xl px-4 py-14 sm:px-6 lg:px-8 lg:py-16">
+      <div className="mx-auto max-w-7xl px-4 py-12 sm:px-6 sm:py-14 lg:px-8 lg:py-16">
         <div className="grid gap-10 md:grid-cols-2 lg:grid-cols-12 lg:gap-8">
           {/* Column 1: Official Logo & Short Description */}
           <div className="lg:col-span-4">
             <Link
               href="/"
-              className="inline-flex items-center gap-3.5 rounded-md focus-visible:outline-2 focus-visible:outline-saffron"
+              className="inline-flex items-center gap-4 rounded-md focus-visible:outline-2 focus-visible:outline-saffron"
             >
-              <span className="flex h-14 w-14 shrink-0 items-center justify-center overflow-hidden rounded-md bg-white p-1">
+              <span className="flex h-20 w-20 shrink-0 items-center justify-center overflow-hidden rounded-lg bg-white p-1.5 shadow-sm">
                 <Image
                   src={siteConfig.assets.logo.src}
                   alt={siteConfig.assets.logo.alt}
-                  width={56}
-                  height={56}
+                  width={80}
+                  height={80}
+                  quality={95}
+                  sizes="80px"
                   className="h-full w-full object-contain"
                 />
               </span>
               <div>
-                <span className="font-display block text-xl font-semibold text-white">
+                <span className="font-display block text-2xl font-semibold text-white">
                   {siteConfig.name}
                 </span>
-                <span className="block text-xs tracking-wider text-saffron uppercase">
+                <span className="mt-0.5 block text-xs tracking-wider text-saffron uppercase">
                   Siliguri • India
                 </span>
               </div>
@@ -53,7 +55,7 @@ export function Footer() {
                   <li key={item.href}>
                     <Link
                       href={item.href}
-                      className="text-white/85 transition-colors hover:text-saffron"
+                      className="inline-block py-0.5 text-white/85 transition-colors hover:text-saffron"
                     >
                       {item.label}
                     </Link>
@@ -113,7 +115,7 @@ export function Footer() {
               <li>
                 <Link
                   href="/#donate"
-                  className="text-white/85 transition-colors hover:text-saffron"
+                  className="inline-block py-0.5 text-white/85 transition-colors hover:text-saffron"
                 >
                   Support Our Mission
                 </Link>
@@ -121,7 +123,7 @@ export function Footer() {
               <li>
                 <Link
                   href="/get-involved#volunteer"
-                  className="text-white/85 transition-colors hover:text-saffron"
+                  className="inline-block py-0.5 text-white/85 transition-colors hover:text-saffron"
                 >
                   Volunteer With Us
                 </Link>
@@ -129,7 +131,7 @@ export function Footer() {
               <li>
                 <Link
                   href="/contact?subject=Collaboration+Enquiry"
-                  className="text-white/85 transition-colors hover:text-saffron"
+                  className="inline-block py-0.5 text-white/85 transition-colors hover:text-saffron"
                 >
                   Collaborate With Us
                 </Link>
@@ -137,7 +139,7 @@ export function Footer() {
               <li>
                 <Link
                   href="/contact"
-                  className="text-white/85 transition-colors hover:text-saffron"
+                  className="inline-block py-0.5 text-white/85 transition-colors hover:text-saffron"
                 >
                   Contact Us
                 </Link>
@@ -146,7 +148,7 @@ export function Footer() {
           </div>
         </div>
 
-        <div className="mt-12 flex flex-col gap-4 border-t border-white/15 pt-7 text-xs text-white/75 sm:flex-row sm:items-center sm:justify-between">
+        <div className="mt-10 flex flex-col gap-4 border-t border-white/15 pt-7 text-xs text-white/75 sm:mt-12 sm:flex-row sm:items-center sm:justify-between">
           <p>
             &copy; {currentYear} {siteConfig.name}. All rights reserved.
           </p>

@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import { Fraunces, Plus_Jakarta_Sans } from "next/font/google";
 import { Navbar } from "@/components/layout/Navbar";
 import { Footer } from "@/components/layout/Footer";
@@ -18,6 +18,12 @@ const jakarta = Plus_Jakarta_Sans({
   display: "swap",
   weight: ["400", "500", "600", "700"],
 });
+
+export const viewport: Viewport = {
+  width: "device-width",
+  initialScale: 1,
+  themeColor: "#087A38",
+};
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
@@ -55,10 +61,10 @@ export const metadata: Metadata = {
     description: siteConfig.description,
     images: [
       {
-        url: "/images/hero-community.jpg",
-        width: 1200,
-        height: 675,
-        alt: "Illustrative community gathering representing Notun Sokal's mission",
+        url: "/media/outreach/outreach-05.jpg",
+        width: 1280,
+        height: 960,
+        alt: "Notun Sokal volunteer distributing notebooks and study supplies to young students",
       },
     ],
   },
@@ -66,7 +72,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: `${siteConfig.name} | Community Welfare & Social Development`,
     description: siteConfig.description,
-    images: ["/images/hero-community.jpg"],
+    images: ["/media/outreach/outreach-05.jpg"],
   },
   robots: {
     index: true,
@@ -101,7 +107,7 @@ export default function RootLayout({
       lang="en"
       className={`${fraunces.variable} ${jakarta.variable}`}
     >
-      <body className="flex min-h-screen flex-col bg-ivory text-ink antialiased">
+      <body className="flex min-h-screen flex-col overflow-x-hidden bg-ivory text-ink antialiased">
         <Navbar />
         <main id="main-content" className="flex-1">
           {children}

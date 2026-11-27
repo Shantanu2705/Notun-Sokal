@@ -3,7 +3,7 @@ import { ButtonLink } from "@/components/ui/ButtonLink";
 
 export function FinalCtaSection() {
   return (
-    <section className="relative overflow-hidden bg-dark-green py-20 text-white lg:py-24">
+    <section className="relative overflow-hidden bg-dark-green py-14 text-white sm:py-20 lg:py-24">
       <div
         aria-hidden="true"
         className="pointer-events-none absolute inset-x-0 top-0 h-1 bg-gradient-to-r from-leaf via-saffron to-orange"
